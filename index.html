@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Downloader - Unduh Video & Audio Mudah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Menghubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-blue-100 min-h-screen font-sans text-gray-800 antialiased flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600 flex items-center gap-2">
+                <i class="fa-solid fa-cloud-arrow-down"></i> UniDownloader
+            </h1>
+            <p class="text-sm text-gray-500 hidden md:block">Cepat, Gratis, dan Aman</p>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-3xl w-full bg-white rounded-2xl shadow-xl overflow-hidden fade-in">
+            <!-- Hero Section -->
+            <div class="bg-indigo-600 p-8 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Unduh Apapun dalam Sekejap</h2>
+                <p class="text-indigo-200 text-md md:text-lg">Masukkan link dari YouTube, TikTok, Instagram, atau platform lainnya di bawah ini.</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="p-6 md:p-10">
+                <form id="downloadForm" class="flex flex-col md:flex-row gap-4">
+                    <div class="relative flex-grow">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <input type="url" id="inputUrl" required
+                            class="w-full pl-11 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-gray-700"
+                            placeholder="Tempel tautan video/audio di sini... (Contoh: https://youtube.com/...)">
+                    </div>
+                    <button type="submit" 
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg shadow-indigo-200">
+                        <i class="fa-solid fa-download"></i> Unduh
+                    </button>
+                </form>
+
+                <!-- Loading State -->
+                <div id="loading" class="hidden mt-8 text-center text-gray-500 fade-in">
+                    <i class="fa-solid fa-spinner fa-spin text-4xl text-indigo-500 mb-3"></i>
+                    <p class="text-lg font-medium animate-pulse">Sedang memproses tautan, mohon tunggu...</p>
+                </div>
+
+                <!-- Result Section -->
+                <div id="result" class="hidden mt-8 fade-in">
+                    <!-- Konten hasil akan di-inject menggunakan JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-auto">
+        <p>&copy; 2026 UniDownloader. All rights reserved.</p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript terpisah -->
+    <script src="script.js"></script>
+</body>
+</html>
